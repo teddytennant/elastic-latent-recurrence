@@ -1,0 +1,65 @@
+"""Elastic latent recurrence: a looped-block training recipe (arXiv:2610.12582)."""
+
+import os
+
+os.environ.setdefault("JAX_PLATFORMS", "cpu")
+
+from elastic_latent_recurrence.ops import (
+    BETA_ZERO,
+    adaptive_delta_step,
+    beta,
+    condition_embedding,
+    empty_kv_cache,
+    entry_z,
+    exit_state_update,
+    f_for_target_p1,
+    first_loop_inputs,
+    init_beta_params,
+    init_exit_params,
+    init_modulation_params,
+    init_moe_params,
+    last_loop_attention,
+    load_balance_aux,
+    mean_loop_count,
+    modulated_layer,
+    output_progress_and_budget,
+    p1_marginal,
+    progress_and_budget,
+    rms_norm,
+    run_moe_route_replay,
+    sample_loop_counts,
+    sinusoidal_embedding,
+    write_kv,
+)
+from elastic_latent_recurrence.model import ELRConfig, init_params, train_smoke
+
+__all__ = [
+    "BETA_ZERO",
+    "ELRConfig",
+    "adaptive_delta_step",
+    "beta",
+    "condition_embedding",
+    "empty_kv_cache",
+    "entry_z",
+    "exit_state_update",
+    "f_for_target_p1",
+    "first_loop_inputs",
+    "init_beta_params",
+    "init_exit_params",
+    "init_modulation_params",
+    "init_moe_params",
+    "init_params",
+    "last_loop_attention",
+    "load_balance_aux",
+    "mean_loop_count",
+    "modulated_layer",
+    "output_progress_and_budget",
+    "p1_marginal",
+    "progress_and_budget",
+    "rms_norm",
+    "run_moe_route_replay",
+    "sample_loop_counts",
+    "sinusoidal_embedding",
+    "train_smoke",
+    "write_kv",
+]
